@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    Balance(balance = 20)
                 }
             }
         }
@@ -30,14 +30,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun Balance(balance: Int) {
+    Text(text = balance.toString())
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     TrackerTheme {
-        Greeting("Android")
+       Balance(20)
     }
 }
