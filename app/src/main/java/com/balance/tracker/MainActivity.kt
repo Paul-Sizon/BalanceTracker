@@ -6,10 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.balance.tracker.ui.Balance
 import com.balance.tracker.ui.theme.TrackerTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,18 +24,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Balance(balance: Int) {
-    Text(text = balance.toString())
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    TrackerTheme {
-       Balance(20)
     }
 }
