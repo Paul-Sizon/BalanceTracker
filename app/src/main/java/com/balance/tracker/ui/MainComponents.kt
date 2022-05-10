@@ -50,7 +50,7 @@ val mockListOfPurchases =
     listOf<Purchase>(mockPurchase, mockPurchase2, mockPurchase3, mockPurchase4, mockPurchase5)
 
 @Composable
-fun Screen() {
+fun MainScreen() {
     Scaffold(
         content = {
             Column() {
@@ -157,6 +157,6 @@ fun Element(purchase: Purchase) {
 @Composable
 fun DefaultPreview() {
     TrackerTheme {
-        Screen()
+        MainScreen()
     }
 }

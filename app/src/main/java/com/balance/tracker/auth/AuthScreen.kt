@@ -2,10 +2,14 @@ package com.balance.tracker.auth
 
 import android.content.Intent
 import androidx.activity.result.ActivityResult
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,19 +22,30 @@ import com.balance.tracker.ui.theme.TrackerTheme
 @Composable
 fun AuthScreenContent(googleIntent: Intent, handleAuth: (ActivityResult) -> Unit) {
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.secondary),
+        bottomBar = {
+            GoogleButton(
+                modifier = Modifier.padding(24.dp),
+                intent = googleIntent,
+                handleAuth = handleAuth
+            )
+        }
     ) {
-        Box(
-            modifier = Modifier.padding(start = 18.dp, end = 18.dp),
-            contentAlignment = Alignment.Center
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            GoogleButton(intent = googleIntent, handleAuth = handleAuth)
+            Text(text = "WELCOME!!!!!")
         }
     }
 }
 
 @Composable
-fun AuthScreen(viewModel: AuthViewModel) {
+fun AuthScreen(viewModel: AuthViewModel, navigateNext: () -> Unit) {
     AuthScreenContent(
         googleIntent = viewModel.googleSignInClient.signInIntent,
         handleAuth = viewModel::handleGoogleAuthResult

@@ -3,14 +3,7 @@ package com.balance.tracker
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.balance.tracker.navigation.AppGraph
-import com.balance.tracker.ui.Balance
-import com.balance.tracker.ui.Screen
 import com.balance.tracker.ui.theme.TrackerTheme
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

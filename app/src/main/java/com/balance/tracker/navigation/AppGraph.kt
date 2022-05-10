@@ -9,7 +9,7 @@ import com.balance.tracker.auth.AuthScreen
 import com.balance.tracker.di.AppDependenciesStore
 import com.balance.tracker.di.DaggerAuthComponent
 import com.balance.tracker.ext.injectedViewModel
-import dagger.Component
+import com.balance.tracker.ui.MainScreen
 
 @Composable
 fun AppGraph(modifier: Modifier = Modifier) {
@@ -24,7 +24,10 @@ fun AppGraph(modifier: Modifier = Modifier) {
             val viewModel = injectedViewModel {
                 DaggerAuthComponent.factory().create(AppDependenciesStore.appComponentApi).viewModel
             }
-            AuthScreen(viewModel = viewModel)
+            AuthScreen(viewModel = viewModel) { navController.navigate(Destinations.main) }
+        }
+        composable(Destinations.main){
+            MainScreen()
         }
     }
 }
