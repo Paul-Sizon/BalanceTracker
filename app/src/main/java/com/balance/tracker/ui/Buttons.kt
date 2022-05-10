@@ -28,7 +28,7 @@ fun GoogleButton(
         onResult = handleAuth
     )
     OutlinedButton(
-//        modifier = modifier.width(TrainsTheme.dimens.buttonWideWidth),
+        modifier = modifier,
         onClick = { openGoogleAuthActivity.launch(intent) },
         border = ButtonDefaults.outlinedBorder.copy(width = 3.dp),
         shape = CutCornerShape(15)
