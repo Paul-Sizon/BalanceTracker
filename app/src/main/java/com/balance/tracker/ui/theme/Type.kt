@@ -8,12 +8,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.balance.tracker.R
 
+val fonts = FontFamily(
+    Font(R.font.robotomono_regular)
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     body1 = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = fonts,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+        fontSize = 16.sp,
     )
     /* Other default text styles to override
     button = TextStyle(
@@ -32,6 +36,3 @@ val Typography = Typography(
 object TrackerFonts{
 
 }
-val fonts = FontFamily(
-    Font(R.font.robotomono_regular)
-)

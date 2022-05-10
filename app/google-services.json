@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "797894789206-f0rtim9s57bmfurim8qf0lasb9ndfq4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.balance.tracker",
+            "certificate_hash": "ff5cd6bece484fb86c8b53c8d7c2fbb7e39638c3"
+          }
+        },
+        {
+          "client_id": "797894789206-pa9c9v6du3s02b6o0cqab97ohderlhv2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.balance.tracker",
+            "certificate_hash": "f9fb7577a697c0ecbd940fc8a8255ded23cf5a69"
+          }
+        },
+        {
           "client_id": "797894789206-lmdombukogsfnlc9es5atmch02obdt7r.apps.googleusercontent.com",
           "client_type": 3
         }
