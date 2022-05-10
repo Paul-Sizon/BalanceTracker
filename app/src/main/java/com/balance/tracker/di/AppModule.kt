@@ -33,24 +33,5 @@ interface AppModule {
     abstract fun bindContext(app: Application): Context
 }
 
-@Component(
-    modules = [AuthModule::class],
-    dependencies = [AppComponentApi::class]
-)
-interface AuthComponent {
 
-    @Component.Factory
-    interface Factory {
-        fun create(
-            appComponentApi: AppComponentApi
-        ): AuthComponent
-    }
-
-    val viewModel: AuthViewModel
-}
-
-@Module
-interface AuthModule {
-
-}
 

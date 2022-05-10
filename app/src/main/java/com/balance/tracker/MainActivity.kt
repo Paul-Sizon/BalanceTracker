@@ -33,12 +33,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             TrackerTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Screen()
-                }
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colors.background
+//                ) {
+//                    Screen()
+//                }
+                AppGraph()
             }
         }
     }
