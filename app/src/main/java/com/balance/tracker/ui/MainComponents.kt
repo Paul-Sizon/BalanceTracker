@@ -1,23 +1,10 @@
 package com.balance.tracker.ui
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.BottomAppBar
-import androidx.compose.material.Card
-import androidx.compose.material.FabPosition
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
@@ -62,6 +49,7 @@ fun MainScreen() {
             BottomAppBar(cutoutShape = RoundedCornerShape(50), backgroundColor = Teal200) {
             }
         },
+        topBar = { MainToolBar(table = "Khachapuri lovers") },
         backgroundColor = TrackerColors.grey,
         floatingActionButtonPosition = FabPosition.Center,
         isFloatingActionButtonDocked = true,
@@ -77,6 +65,15 @@ fun MainScreen() {
                 )
             }
         })
+}
+
+@Composable
+private fun MainToolBar(table: String) {
+    TopAppBar {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Text(text = table, style = MaterialTheme.typography.h6)
+        }
+    }
 }
 
 @Composable
