@@ -103,7 +103,7 @@ fun Balance(balance: Balance) {
                     .fillMaxWidth()
                     .padding(),
                 fontSize = 60.sp,
-                text = balance.amount.toString() + " " + balance.currency.symbol,
+                text = balance.getBalance(),
                 color = if (balance.amount >= 0) {
                     TrackerColors.darkGreen
                 } else {
@@ -124,13 +124,12 @@ fun Element(purchase: Purchase) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp),
-        backgroundColor = if (purchase.amount >= 0) {
-            TrackerColors.darkGreen
-        } else {
-            TrackerColors.red
-        },
+        backgroundColor = purchase.getColor(),
     ) {
-        Row(modifier = Modifier.padding(20.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+        Row(
+            modifier = Modifier.padding(20.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
             Text(
                 text = purchase.amount.toString() + purchase.currency.symbol,
                 fontSize = 30.sp,
