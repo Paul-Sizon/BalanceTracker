@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.balance.tracker.navigation.AppGraph
 import com.balance.tracker.ui.Balance
 import com.balance.tracker.ui.Screen
 import com.balance.tracker.ui.theme.TrackerTheme
