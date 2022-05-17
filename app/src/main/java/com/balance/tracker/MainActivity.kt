@@ -3,6 +3,7 @@ package com.balance.tracker
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.view.WindowCompat
 import com.balance.tracker.navigation.AppGraph
 import com.balance.tracker.ui.theme.TrackerTheme
 import com.google.firebase.auth.FirebaseAuth
@@ -23,15 +24,12 @@ class MainActivity : ComponentActivity() {
 
         Timber.d("currentUser=$currentUser")
 
+        // Turn off the decor fitting system windows, which allows us to handle insets,
+        // including IME animations
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
             TrackerTheme {
-                // A surface container using the 'background' color from the theme
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colors.background
-//                ) {
-//                    Screen()
-//                }
                 AppGraph()
             }
         }

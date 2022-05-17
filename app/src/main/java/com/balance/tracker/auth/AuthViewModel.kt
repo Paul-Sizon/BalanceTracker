@@ -30,6 +30,11 @@ class AuthViewModel @Inject constructor(
         googleSignInClient = GoogleSignIn.getClient(context,options)
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        Timber.d("onCleared")
+    }
+
     private fun getSignInOptions(): GoogleSignInOptions {
         return GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(GOOGLE_ID_TOKEN)
